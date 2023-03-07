@@ -16,4 +16,4 @@ You may also see any lint errors in the console.
 
 ## Example
 
-Type 0x34d85c9CDeB23FA97cb08333b511ac86E1C4E258 into the search bar will show the list of NFTs
+Type `0x34d85c9CDeB23FA97cb08333b511ac86E1C4E258` into the search bar will show the list of NFTs
