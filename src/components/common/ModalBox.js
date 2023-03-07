@@ -15,7 +15,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import ntfService from "../../services/nft";
 
-const ModalBox = ({ isOpen, onOpen, onClose, nft }) => {
+const ModalBox = ({ isOpen, onClose, nft }) => {
   const [owners, setOwners] = useState([]);
 
   useQuery({
@@ -31,6 +31,7 @@ const ModalBox = ({ isOpen, onOpen, onClose, nft }) => {
       size="xl"
       isCentered
       motionPreset="slideInBottom"
+      scrollBehavior="inside"
     >
       <ModalOverlay />
       <ModalContent>

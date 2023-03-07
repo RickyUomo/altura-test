@@ -28,8 +28,9 @@ const Card = ({
         lineHeight="tight"
         noOfLines={1}
         onClick={onOpen}
+        _hover={{ cursor: "pointer" }}
       >
-        <Image h="400px" w="100%" objectFit="cover" src={image} alt={title} />
+        <Image src={image} alt={title} />
       </Box>
       {isOpen ? (
         <ModalBox

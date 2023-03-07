@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Container, SimpleGrid, GridItem } from "@chakra-ui/react";
+import { Container, SimpleGrid, GridItem, Button } from "@chakra-ui/react";
 
 import InputForm from "./components/searchbar/InputForm";
 import Card from "./components/common/Card";
 
 function App() {
+  const perPage = 12;
+  const [showCount, setShowCount] = useState(perPage);
   const [nftList, setNftList] = useState(null);
 
   return (
@@ -12,7 +14,7 @@ function App() {
       <InputForm setNftList={setNftList} />
       <SimpleGrid columns={[1, 2, 3]} gap={6}>
         {nftList?.nfts?.length > 0
-          ? nftList.nfts.slice(0, 9).map((nft, key) => {
+          ? nftList.nfts.slice(0, showCount).map((nft, key) => {
               const tokenId = parseInt(nft.tokenId, 16),
                 title = nft.title,
                 address = nft.contract.address,
@@ -37,6 +39,21 @@ function App() {
             })
           : null}
       </SimpleGrid>
+      <Container marginTop="4" mb="10px" centerContent>
+        {nftList?.nfts?.length > 0 ? (
+          <Button
+            align="center"
+            colorScheme="yellow"
+            onClick={() => {
+              setShowCount(showCount + perPage);
+            }}
+          >
+            Load more
+          </Button>
+        ) : (
+          <></>
+        )}
+      </Container>
     </Container>
   );
 }
