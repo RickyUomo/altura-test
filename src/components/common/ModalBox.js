@@ -18,7 +18,7 @@ import ntfService from "../../services/nft";
 const ModalBox = ({ isOpen, onOpen, onClose, nft }) => {
   const [owners, setOwners] = useState([]);
 
-  const { status, error } = useQuery({
+  useQuery({
     queryKey: ["owners"],
     queryFn: () => ntfService.getOwners(nft.address, nft.id),
     onSuccess: (data) => setOwners(data.owners),
