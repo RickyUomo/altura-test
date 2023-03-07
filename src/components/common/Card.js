@@ -19,6 +19,8 @@ const Card = ({
     <>
       <Text>{title ? title : "#" + id}</Text>
       <Box
+        boxShadow="2xl"
+        rounded="md"
         maxW="lg"
         borderWidth="1px"
         borderRadius="lg"
