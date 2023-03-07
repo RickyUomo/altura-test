@@ -12,6 +12,11 @@ const getNftsByAddress = async (address) => {
   return nfts;
 };
 
-const ntf = { getNftsByAddress };
+const getOwners = async (address, id) => {
+  const owner = await alchemy.nft.getOwnersForNft(address, id);
+  return owner;
+};
 
-export default ntf;
+const ntfService = { getNftsByAddress, getOwners };
+
+export default ntfService;

@@ -10,7 +10,7 @@ import {
 import { Form } from "react-final-form";
 import { useQuery } from "@tanstack/react-query";
 
-import nft from "../../services/nft";
+import ntfService from "../../services/nft";
 import validateAddress from "../../services/validate";
 
 const InputForm = ({ setNftList }) => {
@@ -19,7 +19,7 @@ const InputForm = ({ setNftList }) => {
 
   const { status, error, refetch } = useQuery({
     queryKey: ["nfts"],
-    queryFn: () => nft.getNftsByAddress(address),
+    queryFn: () => ntfService.getNftsByAddress(address),
     refetchOnWindowFocus: false,
     enabled: false,
     onSuccess: (data) => setNftList(data),
@@ -46,7 +46,7 @@ const InputForm = ({ setNftList }) => {
 
   return (
     <>
-      <Box w={500} p={4} m="20px auto">
+      <Box w="90%" p={4} m="20px auto">
         <Form
           onSubmit={onSubmit}
           render={({ handleSubmit, submitting }) => (
@@ -64,6 +64,7 @@ const InputForm = ({ setNftList }) => {
                 isLoading={submitting}
                 loadingText="Submitting"
                 type="submit"
+                colorScheme="messenger"
                 mt="10px"
               >
                 Submit

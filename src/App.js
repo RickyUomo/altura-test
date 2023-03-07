@@ -16,7 +16,9 @@ function App() {
               const tokenId = parseInt(nft.tokenId, 16),
                 title = nft.title,
                 address = nft.contract.address,
-                image = nft.media[0].gateway;
+                image = nft.media[0].gateway,
+                description = nft.contract.openSea.description,
+                collectionName = nft.contract.openSea.collectionName;
 
               return (
                 <GridItem key={key}>
@@ -25,6 +27,8 @@ function App() {
                     title={title}
                     address={address}
                     image={image}
+                    description={description}
+                    collectionName={collectionName}
                   />
                 </GridItem>
               );
