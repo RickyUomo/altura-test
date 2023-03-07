@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Image, useDisclosure, Text } from "@chakra-ui/react";
 
 import ModalBox from "./ModalBox";
@@ -13,6 +13,7 @@ const Card = ({
   floorPrice,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isHover, setIsHover] = useState(false);
 
   return (
     <>
@@ -28,7 +29,15 @@ const Card = ({
         lineHeight="tight"
         noOfLines={1}
         onClick={onOpen}
-        _hover={{ cursor: "pointer" }}
+        _hover={{}}
+        style={{
+          cursor: isHover ? "pointer" : "",
+          position: "relative",
+          top: isHover ? "-10px" : "0px",
+          transition: "top ease 0.5s",
+        }}
+        onMouseEnter={() => setIsHover(!isHover)}
+        onMouseLeave={() => setIsHover(!isHover)}
       >
         <Image src={image} alt={title} />
       </Box>
