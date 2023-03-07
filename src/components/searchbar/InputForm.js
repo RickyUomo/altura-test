@@ -37,6 +37,7 @@ const InputForm = ({ setNftList }) => {
 
     if (error) {
       setErrorMessage(error);
+      setNftList(null);
     } else {
       setErrorMessage("");
       refetch();
