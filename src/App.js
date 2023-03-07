@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Container, SimpleGrid, GridItem } from "@chakra-ui/react";
 
 import InputForm from "./components/searchbar/InputForm";
-import Card from "./components/Card";
+import Card from "./components/common/Card";
 
 function App() {
-  const [nftList, setNftList] = useState("");
+  const [nftList, setNftList] = useState(null);
 
   return (
     <Container maxWidth={1200}>
