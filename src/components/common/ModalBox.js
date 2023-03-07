@@ -83,6 +83,18 @@ const ModalBox = ({ isOpen, onOpen, onClose, nft }) => {
           ) : (
             <></>
           )}
+          <Text
+            fontSize={{ base: "16px", md: "20px", lg: "26px" }}
+            mt="5px"
+            pt="5px"
+            borderTop="1px"
+            fontWeight="bold"
+          >
+            Floor Price:
+          </Text>
+          <Text fontSize={{ base: "16px", md: "20px", lg: "26px" }}>
+            {nft.floorPrice ? `${nft.floorPrice} ETH` : ""}
+          </Text>
         </ModalBody>
 
         <ModalFooter>

@@ -18,7 +18,8 @@ function App() {
                 address = nft.contract.address,
                 image = nft.media[0].gateway,
                 description = nft.contract.openSea.description,
-                collectionName = nft.contract.openSea.collectionName;
+                collectionName = nft.contract.openSea.collectionName,
+                floorPrice = nft.contract.openSea.floorPrice;
 
               return (
                 <GridItem key={key}>
@@ -29,6 +30,7 @@ function App() {
                     image={image}
                     description={description}
                     collectionName={collectionName}
+                    floorPrice={floorPrice}
                   />
                 </GridItem>
               );
