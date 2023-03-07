@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Input, Alert, AlertIcon, Button, Box } from "@chakra-ui/react";
+import {
+  Input,
+  Alert,
+  AlertIcon,
+  Button,
+  Box,
+  FormLabel,
+} from "@chakra-ui/react";
 import { Form } from "react-final-form";
 import { useQuery } from "@tanstack/react-query";
 
@@ -50,6 +57,7 @@ const InputForm = ({ setNftList }) => {
               boxShadow="1px 1px 3px rgba(0,0,0,0.3)"
               onSubmit={handleSubmit}
             >
+              <FormLabel>NFT Address</FormLabel>
               <Input name="address" label="Address" onChange={onChange} />
               <Button
                 isLoading={submitting}
