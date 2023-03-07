@@ -15,7 +15,7 @@ function App() {
   const perPage = 6;
   const [showCount, setShowCount] = useState(perPage);
   const [nftList, setNftList] = useState(null);
-  const totalNfts = nftList.nfts.length || 0;
+  const totalNfts = nftList?.nfts?.length || 0;
 
   return (
     <>
@@ -51,7 +51,7 @@ function App() {
         </SimpleGrid>
         <Container marginTop="4" mb="10px" centerContent>
           <Text mb="5px">
-            {showCount} / {totalNfts} NFTs
+            {totalNfts ? showCount : 0} / {totalNfts} NFTs
           </Text>
           {nftList?.nfts?.length > 0 ? (
             <Button
